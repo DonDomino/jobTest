@@ -1,33 +1,271 @@
-.App {
-  text-align: center;
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+html, body, #root{
+  height: 100%;
+  padding: 10px;
+  background-color: #eeeeee;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  margin: 0 auto;
+  min-height: 100%; 
+  background-color: #e6e6e6; 
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.main{
+  width: 80%;
+  margin: 30px 100px 30px 50px;
+}
+/*Navbar*/
+.navbar{
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+}
+.iconWrapper{
+  width: 100%;
+  padding: 5px;  
+  text-align: center;
+  color: #383838;
+}
+.iconWrapper:hover{
+  background-color: #193948;
+  color: white;
+  cursor: pointer;
+}
+.navbar svg{
+  font-size: 1.5rem;
+}
+.navbar p{
+  margin-top: 5px;
+  font-size: 0.8rem;
+}
+.selected{
+  background-color: #193948;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+/*Aside*/
+aside{
+  width: 20%;
+  height: 80%;
+  position: relative;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+aside:after {
+  content: '';
+  height: 70%;
+  width: 1px;
+  position: absolute;
+  right: 0;
+  top: 30%; 
+  background-color: #a6a6a6;
+}
+.separator{
+  width: 70%;
+  margin: 30px auto;
+  border-bottom: 1px solid #a6a6a6;
+}
+.logo{
+  margin: 20px auto;
+  width: 200px;
+  color: #686868;
+}
+.logo img{
+  width: 100%;
+}
+.logo svg{
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+.logoWrapper{
+  text-align: center;
+}
+/*Switches*/
+.switches{
+  margin: 20px 0;
+}
+.switchWrapper{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.switchWrapper svg{
+  font-size: 2.7rem;
+  color: #686868;
+}
+.switchIconWrapper{
+  position: relative;
+}
+.sale{
+  position: absolute;
+  color: white;
+  left: 20%;
+  top: 30%;
+  font-size: 0.7rem;
+  font-weight: bold;
+  transform: rotate(-15deg);
+}
+.number{
+  position: absolute;
+  color: #686868;
+  left: 20%;
+  top: 30%;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.switch-checkbox {
+  display: none;
+  height: 0;
+  width: 0;
+}
+.switch-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 65px;
+  height: 35px;
+  border-radius: 100px;
+  position: relative;
+}
+.switch-label .switch-button {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 36px;
+  border-radius: 45px;
+  transition: 0.2s;
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+}
+.switch-checkbox:checked + .switch-label .switch-button {
+  left: 100%;
+  transform: translateX(-100%);
+}
+/*Status and Searchbar*/
+.status{
+  margin-top: 20px;
+  text-align: center;
+}
+.status p{
+  color: #686868;
+}
+.button, .longSearch{
+  padding: 10px;  
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #a6a6a6;
+  font-family: "FontAwesome", sans-serif;  
+}
+.button{
+  margin: 10px auto;  
+  width: 70%;
+}
+button.button{
+  cursor: pointer;
+}
+input[type="text"]{
+  text-align: center;
+}
+.searchbar{
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fa-check-circle{
+  color: #ee8d38;
+  font-size: 2.7rem;
+}
+/* Items */
+.itemsWrapper{
+  position: relative;
+}
+.item, .itemWrapper, .price, .locationWrapper, .adress{
+  display: flex;
+  align-items: center;
+}
+.item{
+  margin-top: 30px;
+  justify-content: space-between;
+}
+.itemWrapper{
+  width: 90%;
+  padding: 10px;
+  background-color: white;
+  border-radius: 30px;
+}
+.date{
+  margin: 0 auto;
+  width: 10%;
+  color: #a6a6a6;
+  text-align: center;
+}
+.location{
+  width: 30%;
+  border-right: 2px solid #e6e6e6;
+  border-left: 2px solid #e6e6e6;
+}
+.locationWrapper{
+  justify-content: center;
+}
+.adress{  
+  flex-direction: column;
+  justify-content: center;  
+  margin: 0 20px;
+  color: #686868;
+}
+.fa-location-arrow{
+  margin-left: 10px;
+  font-size: 1.5rem;
+  color: #a6a6a6;
+}
+.fa-chevron-down{
+  margin: 5px 0;
+  font-size: 2rem;
+  color: #ee8d38;
+}
+.price{
+  width: 50%;
+  justify-content: space-evenly;
+}
+.fa-truck{
+  margin: 0 25px;
+  font-size: 2.7rem;
+  color: #686868;
+}
+.price p{
+  font-size: 2rem;
+  color: #686868;
+}
+.numberSquare{
+  width: 40px;  
+  padding: 10px;
+  background-color: #ed5356;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+}
+.fa-ellipsis-v{  
+  font-size: 1.3rem;
+  color: #686868;
+}
+.circleButton{
+  position: absolute;
+  right: -4%;
+  bottom: -5%; 
+  background-image: radial-gradient(white 50%, #ee8d38 50%);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.fa-plus-circle{
+  color: #ee8d38;
+  font-size: 5rem;
 }
